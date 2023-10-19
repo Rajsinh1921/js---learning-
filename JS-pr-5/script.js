@@ -1,34 +1,86 @@
+// let squre = n => n * n;
 
 
-let maxNumber = prompt(`PLease, give us the maximum number: `);
+// let id = setInterval(()=>{
+//     console.log("MSM");
+// },2000);
 
-let randomNum = Math.floor((Math.random() * maxNumber) + 1);
+// setTimeout(() => {
+//     clearInterval(id);
+//     console.log("Clear Interval");
+// }, 10000);
 
-let guess = prompt(`Enter your guess here: `);     
-
-console.log(+randomNum)
-
-while (true) {
-
-        if (guess == `quit`) {
-            console.log(`The number was ${+randomNum}`);
-            break;
-        } 
-        
-        if (guess == randomNum) {
-            alert(`Congratulations you have guessed it right! Number was, ${+randomNum}`);
-            console.log(`Congratulations you have guessed it right! Number was, ${+randomNum}`);
-                break;
-      
-        } else if (guess > randomNum) {
-            guess = prompt(` Hint: Number is larger then guessed number`)
-      
-        } else {
-            guess = prompt(` Hint: Number is smaller then guessed number`)
-        } 
-        
-}
+// Ans-1
+// const array = [1,2,3,4,5,6,7,8,9,10]
 
 
 
+// const arrayAverage = (array) => {
+    
+//     let total = 0;
+//     for (let i = 0; i < array.length; i++) {
+//        total += array[i]; 
+//     }
+//     return (total/array.length)
+// }
 
+// console.log(arrayAverage(array))
+
+
+// const arayAverage = (array) => {
+//     let total = 0;
+//     for (const number of array) {
+//         total += number;
+//     }
+//     return total / array.length;
+
+// }
+
+// console.log(arayAverage(array));
+
+// Ans - 2
+
+// const even = n => n % 2 == 0;
+
+// Ans - 3
+
+const object = {
+    message: 'Hello, World!',
+    logMessage() {
+      console.log(this.message);
+    }
+  };
+  
+  setTimeout(object.logMessage, 1000);
+  console.log(object.logMessage()); 
+  
+// let length = 4;
+
+// function callback() {
+//   console.log(this.length);
+// }
+
+// const object = {
+//   length: 5,
+//   method(callback) {
+//     callback();
+//   },
+// };
+
+// object.method(callback, 1, 2);
+
+
+// function outer () {
+//     let username = "MSM";
+//     function inner (){
+//         let secret = "My1234"
+//         console.log("inner", username)
+//         function innerineer (){
+//             console.log( "innerinnerr", secret, username);
+//         }
+//         innerineer()
+//     }
+//     inner()
+// }
+
+// outer()

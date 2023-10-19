@@ -41,22 +41,23 @@
 
 //careating loop that gooes to each index and compare if that is exicted in new aaray or not 
 
-// let string = "aAAabA";
+let string = "ASDFGAS";
 
 
-// function filteringString (str) {
-//     let newString = "";
+function filteringString (str) {
+    let newString = "";
     
-//     for (const iteam of str) {
-//         if (newString.indexOf(iteam) < 0 ) {
-//             newString += iteam;
-//         }
-//     }
+    for (const iteam of str) {
+        if (newString.indexOf(iteam) == -1 ) {
+            newString += iteam;
+        }
+    }
 
-//     return newString
-// }
+    console.log(newString);
+    return newString
+}
+filteringString(string)
 
-// filteringString(string)
 
 // Ans - 3 
 
@@ -103,13 +104,13 @@
 
 // Ans - 05
 
-function generateRandomNum (start,end) {
+// function generateRandomNum (start,end) {
 
-    let range = (end - start) + 1; 
-    let finalNum = Math.floor((Math.random() * range + start) );
+//     let range = (end - start) + 1; 
+//     let finalNum = Math.floor((Math.random() * range + start) );
     
-    return finalNum;
-}
+//     return finalNum;
+// }
 
-const randomNum = generateRandomNum(1,5);
-console.log(randomNum)
+// const randomNum = generateRandomNum(1,5);
+// console.log(randomNum)
