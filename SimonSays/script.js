@@ -30,7 +30,6 @@ function gameFlash (btn){
 }
 
 // For counting High-Score 
-
 function highScoreUp (){
     if (highScore < score) {
         highScore++;
