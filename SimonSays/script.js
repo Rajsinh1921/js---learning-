@@ -1,7 +1,6 @@
 
-const h2 = document.querySelector("h2");
-
-const btns = ["red","yellow","green","purple"]
+const h2Message = document.querySelector("#message");
+const btns = ["red","yellow","green","purple"];
 
 
 let gameSeq = [];
@@ -9,6 +8,7 @@ let userSeq = [];
 let playGame = false;
 let level = 0;
 let score = 0;
+let highScore = 0;
 
 //If any key is pressed start the game & up the level 
 document.addEventListener("keypress",function(){
@@ -17,6 +17,7 @@ document.addEventListener("keypress",function(){
         
         levelUp();
     }
+
 });
 
 //Flash the button for user 
@@ -28,6 +29,14 @@ function gameFlash (btn){
     }, 250);
 }
 
+// For counting High-Score 
+
+function highScoreUp (){
+    if (highScore < score) {
+        highScore++;
+    }
+}
+
 // Flash the button when user clickes
 function userFlash (btn){
     btn.classList.add("userFlash");
@@ -37,11 +46,12 @@ function userFlash (btn){
     }, 200);
 }
 
-// Chnge the h2 on level-up & select any random color
+// Chnge the h2Message on level-up & select any random color
 function levelUp (){
     userSeq = [];
     level++;
-    h2.innerText = `Level ${level}`;
+    h2Message.innerText = `Level ${level}`;
+
     
     let randomName = btns[Math.floor(Math.random() * 4)];
     let randombtn = document.querySelector(`.${randomName}`);
@@ -74,10 +84,13 @@ function checkInput (idx){
         if (userSeq.length == gameSeq.length) {
             setTimeout(levelUp,1000);
             score++;
+            highScoreUp()
             console.log(score)
         }
     } else {
-        h2.innerHTML = `Game over!! Press any key to start. </br> Your score was ${score}`;
+        h2Message.innerHTML = `Game over!! Press any key to start. </br> Your score was : ${score} </br> High score :${highScore}`;
+
+
         reset();
     }
 }
@@ -87,4 +100,7 @@ function reset (){
      userSeq = [];
      playGame = false;
      level = 0;
+     score = 0;
+
+
 }
